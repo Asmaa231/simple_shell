@@ -9,7 +9,9 @@
 #include <sys/types.h>
 #include <fcntl.h>
 #include <errno.h>
-
+#include <canio.h>
+#include <stdbool.h>
+#include <math.h>
 #define Delim 
 extern char environ;
 
