@@ -35,11 +35,11 @@ char *_strdup(const char *str)
 		dup++;
 	net = malloc (sizeof(char) *(dup + 1));
 	if (!net)
-		return (Null);
+		return (NULL);
 	for (dup++; dup--;)
 		net[dup] = *--str;
 	return (net);
-
+}
 /**
  * _strcpy - this function copies a string from one location to another 
  * @des: The Destination 
