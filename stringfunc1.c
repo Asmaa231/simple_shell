@@ -39,7 +39,7 @@ char *_strdup(const char *str)
 	for (dup++; dup--;)
 		net[dup] = *--str;
 	return (net);
-
+}
 /**
  * _strcpy - this function copies a string from one location to another 
  * @des: The Destination 
@@ -93,7 +93,7 @@ void _puts(char *str1)
 
 	if (!str1)
 		return;
-	while (str1[e] != '\0')
+	while (str1[e] != '/0')
 	{
 		_putchar(str1[e]);
 		e++;
