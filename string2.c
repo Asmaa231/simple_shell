@@ -1,3 +1,4 @@
+#include "shell.h"
 /**
  * strncpy- used to copy a specified Number of strings from one string to another one
 *@des: The destination string that stores the one which will be copied 
