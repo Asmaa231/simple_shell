@@ -54,7 +54,7 @@ char * _strcpy(char *des, char *sr)
 		return (des);
 	while (sr[c])
 	{
-		des[c] = sr[c]
+		des[c] = sr[c];
 			c++;
 	}
 	des[c] = 0;
@@ -93,7 +93,7 @@ void _puts(char *str1)
 
 	if (!str1)
 		return;
-	while (str1[e] != '/0')
+	while (str1[e] != '\0')
 	{
 		_putchar(str1[e]);
 		e++;
