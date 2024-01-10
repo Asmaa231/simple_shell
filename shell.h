@@ -17,28 +17,6 @@
 #define Delim
 extern char environ;
 
-ssize_t getline(char **lineptr, size_t *n, FILE *stream);
-void execmd(char **argv);
-
-
-char *get_loc(char *cmd);
-int *_stat(const char *pathnm, struct stat **statbuff);
-
-
-char *getenv(const char *name);
-int *_setenv(const char *name, const char *value, int overwrite);
-int *_unsetenv(const char *name);
-
-
-char *strtok(char *s, const char *delim);
-char *_strcpy(char *dest, char *src);
-char *_strcat(char *dest, char *src);
-char *_strdup(const char *s);
-int *_strcmp(char *s1, char *s2);
-int *_strlen(char *s);
-
-int _putchar(char c);
-
 /**
  * struct infopass: has false arguments
  * @arg: arguments of string got by getline
@@ -53,14 +31,14 @@ int _putchar(char c);
  */
 typedef struct infopass
 {
-	char *arg;
-	char **argv;
-	char **environ;
-	char *path;
-	char *filename;
-	int argc;
-	int envchange;
-	list_t *env;
+        char *arg;
+        char **argv;
+        char **environ;
+        char *path;
+        char *filename;
+        int argc;
+        int envchange;
+        list_t *env;
 } info_t;
 
 
@@ -71,8 +49,8 @@ typedef struct infopass
  */
 typedef struct builtin
 {
-	char *kind;
-	int (*fun)(info_t *);
+        char *kind;
+        int (*fun)(info_t *);
 } builtin_t;
 
 /**
@@ -83,9 +61,33 @@ typedef struct builtin
  */
 typedef struct strlist
 {
-	char *str;
-	int num;
-	struct strlist *nxt;
+        char *str;
+        int num;
+        struct strlist *nxt;
 } list_t;
+
+
+void sigintHandler(__attribute__((unused))int sined_num);
+ssize_t getline(char **lineptr, size_t *n, FILE *stream);
+int _getline(info_t *info, char **poter, size_t *lenth);
+void execmd(char **argv);
+
+
+char *get_loc(char *cmd);
+int *_stat(const char *pathnm, struct stat **statbuff);
+
+
+char *getenv(const char *name);
+int *_setenv(const char *name, const char *value, int overwrite);
+int *_unsetenv(const char *name);
+
+char *strtok(char *s, const char *delim);
+char *_strcpy(char *dest, char *src);
+char *_strcat(char *dest, char *src);
+char *_strdup(const char *s);
+int *_strcmp(char *s1, char *s2);
+int *_strlen(char *s);
+
+int _putchar(char c);
 
 #endif
