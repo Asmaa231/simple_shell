@@ -11,10 +11,8 @@
 #include <errno.h>
 #include <math.h>
 #include <ctype.h>
-#include <conio.h>
-#include <ctype.h>
 #include <stdbool.h>
-#include <math.h>
+
 
 #define Delim
 extern char environ;
@@ -24,7 +22,7 @@ ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 void execmd(char **argv);
 
 //getpath.c
-char *get-loc(char *cmd);  // get path location
+char *get_loc(char *cmd);  // get path location
 int *stat(const char *pathnm, struct stat **statbuff);  //check if file path exists or not
 
 //env.c
@@ -62,8 +60,8 @@ typedef struct infopass
 	char *filename;
 	int argc;
 	int envchange;
-	list_t env;
-}list_t
+	list_t *env;
+}info_t;
 
 
 /**
@@ -75,7 +73,7 @@ typedef struct builtin
 {
 	char *kind;
 	int (fun *)(info_t *);
-}builtin_t
+}builtin_t;
 
 /**
  * struct strlist: the linked list
@@ -88,6 +86,6 @@ typedef struct strlist
 	char *str;
 	int num;
 	struct strlist *nxt;
-}list_t
+}list_t;
 
 #endif

@@ -38,7 +38,7 @@ int main(int ac, char **argv)
 		toks_num++;
 		argv = malloc(sizeof(char *) * toks_num);
 		tok = strtok(cp_cmd, delim);
-		for (i = 0, tok != '\0', i++)
+		for (i = 0; tok != '\0'; i++)
 		{
 			argv[i] = malloc(sizeof(char) * _strlen(tok));
 			_strcpy(argv[i], tok);
