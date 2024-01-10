@@ -13,7 +13,6 @@
 #include <math.h>
 #include <ctypes.h>
 
-=======
 #include <canio.h>
 #include <stdbool.h>
 #include <math.h>
