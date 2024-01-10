@@ -58,8 +58,21 @@ char *get_loc(char *cmd)
 	}
 	free(pathcp);
 
-	if (stat(cmd, &buff) == 0)
+	if (_stat(cmd, &buff) == 0)
 		return (cmd);
 	return (0);
 	return (0);
+}
+
+/**
+ * _putchar - write the character c to stdout
+ * @c: the character to print
+ *
+ * Return: On success (1)
+ *         On error, -1 is returned and error is set approperiatly.
+*/
+
+int _putchar(char c)
+{
+        return (write(1, &c, 1));
 }

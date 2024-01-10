@@ -17,28 +17,28 @@
 #define Delim
 extern char environ;
 
-// getline.c
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 void execmd(char **argv);
 
-//getpath.c
-char *get_loc(char *cmd);  // get path location
-int *stat(const char *pathnm, struct stat **statbuff);  //check if file path exists or not
 
-//env.c
-char *getenv(const char *name);// get path envir. name
-int *_setenv(const char *name, const char *value, int overwrite);// change path envir. name
-int *_unsetenv(const char *name);  //delete path envir. name
+char *get_loc(char *cmd);
+int *_stat(const char *pathnm, struct stat **statbuff);
 
-//str.c
-char *strtok(char *s, const char *delim); // split string
+
+char *getenv(const char *name);
+int *_setenv(const char *name, const char *value, int overwrite);
+int *_unsetenv(const char *name);
+
+
+char *strtok(char *s, const char *delim);
 char *_strcpy(char *dest, char *src);
 char *_strcat(char *dest, char *src);
 char *_strdup(const char *s);
 int *_strcmp(char *s1, char *s2);
 int *_strlen(char *s);
 
-//struct
+int _putchar(char c);
+
 /**
  * struct infopass: has false arguments
  * @arg: arguments of string got by getline
@@ -61,7 +61,7 @@ typedef struct infopass
 	int argc;
 	int envchange;
 	list_t *env;
-}info_t;
+} info_t;
 
 
 /**
@@ -72,8 +72,8 @@ typedef struct infopass
 typedef struct builtin
 {
 	char *kind;
-	int (fun *)(info_t *);
-}builtin_t;
+	int (*fun)(info_t *);
+} builtin_t;
 
 /**
  * struct strlist: the linked list
@@ -86,6 +86,6 @@ typedef struct strlist
 	char *str;
 	int num;
 	struct strlist *nxt;
-}list_t;
+} list_t;
 
 #endif
