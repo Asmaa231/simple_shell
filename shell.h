@@ -9,16 +9,12 @@
 #include <sys/types.h>
 #include <fcntl.h>
 #include <errno.h>
-
 #include <math.h>
-#include <ctypes.h>
-
-=======
-#include <canio.h>
+#include <ctype.h>
+#include <conio.h>
 #include <stdbool.h>
 #include <math.h>
-
-#define Delim 
+#define Delim
 extern char environ;
 
 // getline.c
@@ -30,17 +26,17 @@ char *get-loc(char *cmd);  // get path location
 int *stat(const char *pathnm, struct stat **statbuff);  //check if file path exists or not
 
 //env.c
-char *getenv(const char *name);   // get path envir. name
-int *_setenv(const char *name, const char *value, int overwrite);   // change path envir. name
+char *getenv(const char *name);// get path envir. name
+int *_setenv(const char *name, const char *value, int overwrite);// change path envir. name
 int *_unsetenv(const char *name);  //delete path envir. name
 
 //str.c
-char *strtok(char *s, const char *delim);  // split string
+char *strtok(char *s, const char *delim); // split string
 char *_strcpy(char *dest, char *src);
 char *_strcat(char *dest, char *src);
 char *_strdup(const char *s);
 int *_strcmp(char *s1, char *s2);
-int *_strlen(char *s); 
+int *_strlen(char *s);
 
 //struct
 /**
@@ -57,14 +53,14 @@ int *_strlen(char *s);
  */
 typedef struct infopass
 {
-    char *arg;
-    char **argv;
-    char **environ;
-    char *path;
-    char *filename;
-    int argc;
-    int envchange;
-    list-t env;
+	char *arg;
+	char **argv;
+	char **environ;
+	char *path;
+	char *filename;
+	int argc;
+	int envchange;
+	list_t env;
 }list_t
 
 
@@ -75,10 +71,9 @@ typedef struct infopass
  */
 typedef struct builtin
 {
-    char *kind;
-    int (fun *)(info_t *);
+	char *kind;
+	int (fun *)(info_t *);
 }builtin_t
-
 
 /**
  * struct strlist: the linked list
@@ -88,9 +83,9 @@ typedef struct builtin
  */
 typedef struct strlist
 {
-    char *str;
-    int num;
-    struct strlist *nxt;
+	char *str;
+	int num;
+	struct strlist *nxt;
 }list_t
 
 #endif
