@@ -28,7 +28,7 @@ ssize_t input_buf(info_t *info, char **buf, size_t *sen)
 		{
 			if ((*buf)[g - 1] == '\n')
 			{
-				(*buf)[g - 1] = '\0'; /* remove trailing newline character /n */
+				(*buf)[g - 1] = '/0'; /* remove trailing newline character /n */
 				g--;
 			}
 			info->linecount_flag = 1;
