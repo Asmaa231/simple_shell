@@ -1,9 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "shell.h"
 /**
- * _strcat -concatenates two strings 
+ * _strcat - concatenates two strings such as string2 to string1
  * @des: the destination Buffer
  * @sr: The Source Buffer
  *
@@ -22,7 +19,7 @@ char *_strcat(char *des,char *sr)
 }
 
 /**
- *_strdup _duplicates a string
+ *_strdup _ create a duplicate of the string pointed to
  * @str: the string to duplicate 
  *
  * Return: Pointer to the Duplicate string 
@@ -44,11 +41,11 @@ char *_strdup(const char *str)
 	return (net);
 
 /**
- * _strcpy - this function copies a string 
+ * _strcpy - this function copies a string from one location to another 
  * @des: The Destination 
  * @sr: The Source 
  *
- * Return: Pointer tp Destination 
+ * Return: Pointer to Destination 
  */
 char * _strcpy(char *des, char *sr)
 {
@@ -69,7 +66,7 @@ char * _strcpy(char *des, char *sr)
  * @e: The character which will be printed 
  *
  * Return: On Success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * Display error when -1 is returned, and errno is set appropriately.
  */
 int _putchar(char e)
 {
@@ -83,4 +80,22 @@ int _putchar(char e)
 	if (e != BUF_FLUSH)
 		buf[c++] = e;
 	return (c);
+}
+/**
+ *_puts - is used to write a line or string to the output(stdout)Stream
+ *@str1: the string to be printed
+ *
+ * Return: Nothing
+ */
+void _puts(char *str1)
+{
+	int e = 0;
+
+	if (!str1)
+		return;
+	while (str1[e] != '\0')
+	{
+		_putchar(str1[e]);
+		e++;
+	}
 }
