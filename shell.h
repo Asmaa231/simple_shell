@@ -9,6 +9,8 @@
 #include <sys/types.h>
 #include <fcntl.h>
 #include <errno.h>
+#include <math.h>
+#include <ctypes.h>
 
 #define Delim 
 extern char environ;
