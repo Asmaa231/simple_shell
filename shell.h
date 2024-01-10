@@ -12,8 +12,10 @@
 #include <math.h>
 #include <ctype.h>
 #include <conio.h>
+#include <ctype.h>
 #include <stdbool.h>
 #include <math.h>
+
 #define Delim
 extern char environ;
 
