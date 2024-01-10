@@ -56,14 +56,3 @@ char *get-loc(char *cmd)
     return (0);
 return (0);
 }
-
-    
-
-
-
-    
-   
-
-
-
-}
