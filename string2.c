@@ -1,6 +1,4 @@
 #include "shell.h"
-
-#define YOUR_MACRO default_value
 /**
  *_strncpy- used to copy a specified Number of strings from one string to another one
 *@des: The destination string that stores the one which will be copied 
