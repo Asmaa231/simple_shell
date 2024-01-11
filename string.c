@@ -2,7 +2,7 @@
 
 /**
  *_strlen - retuns the length of a string
- *@e: the st string which will be checked 
+ *@e: the string which will be checked 
  *
  * Retrun: integer length of the string
  */
@@ -13,8 +13,9 @@ int _strlen(char *e)
 	if(!e)
 		return (0); 
 
-	while (*e++)
+	while (*e != '\0')
 		c++;
+		e++;
 	return (c);
 }
 /**
