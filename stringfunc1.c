@@ -1,4 +1,5 @@
 #include "shell.h"
+#define BUF FLUSH c
 /**
  * _strcat - concatenates two strings such as string2 to string1
  * @des: the destination Buffer
@@ -35,7 +36,7 @@ char *_strdup(const char *str)
 		dup++;
 	net = malloc (sizeof(char) *(dup + 1));
 	if (!net)
-		return (Null);
+		return (NULL);
 	for (dup++; dup--;)
 		net[dup] = *--str;
 	return (net);

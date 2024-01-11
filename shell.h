@@ -12,7 +12,15 @@
 #include <fcntl.h>
 #include <errno.h>
 #include <math.h>
+<<<<<<< HEAD
+=======
 #include <ctype.h>
+<<<<<<< HEAD
+=======
+#include <conio.h>
+#include <ctype.h>
+>>>>>>> 9d941e70a5fade3631b659e4185ca965edbe898f
+>>>>>>> 3393086c3846d7aa28d1deb7acf8559fd9e28c64
 #include <stdbool.h>
 
 

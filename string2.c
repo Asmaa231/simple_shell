@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * strncpy- used to copy a specified Number of strings from one string to another one
+ *_strncpy- used to copy a specified Number of strings from one string to another one
 *@des: The destination string that stores the one which will be copied 
 *@sr: The Main or source string
 *k:The Number of characters which will be copied
@@ -12,9 +12,13 @@ int *_strncpy(char *des,char *sr,int k)
 int e, c;
 char *r =des;
 e = 0;
+<<<<<<< HEAD
 while (sr[e] != '\0' && e < k - 1)
+=======
+while (sr[e] != '\0' && e < k)
+>>>>>>> 3393086c3846d7aa28d1deb7acf8559fd9e28c64
 {
-    des[e] =sr[e]
+    des[e] =sr[e];
     e++;
 }
 if (e < k) 
@@ -31,7 +35,7 @@ return (r);
 }
 
 /**
- * strncat -  It helps in concatenating a portion of one string to the end of another string.
+ *_strncat -  It helps in concatenating a portion of one string to the end of another string.
 *@st1:The First string
 *@inr: The second String
 *@k: The maximum bytes that can be used
@@ -48,7 +52,11 @@ char *_strncat(char *st1, char *inr, int k)
     {
         p++;
     }
+<<<<<<< HEAD
     while (inr[r] != '\0' && r > k)
+=======
+    while (inr[r] != '\0' && r < k)
+>>>>>>> 3393086c3846d7aa28d1deb7acf8559fd9e28c64
     {
         st1[p] = inr[r];
         p++;
@@ -62,16 +70,22 @@ return (h);
 }
 
 /**
- * strchr - Is used to find a spacific character within a string
+ *_strchr - Is used to find a spacific character within a string
  * @w: The string that will be representing the location of the character that we are looking for
  * @g:The character that need to be located and the one we are trying to find.
  * Return: (r) a pointer to the Memory Area r & returns a null pointer.
 */
-char *_strchr(char *r, char g)
+char *_strchr(char *w, char g)
 {
     do{
+<<<<<<< HEAD
         if (*r == g)
         return (r);
     } while (*r++ != '\0');
+=======
+        if (*w == g)
+        return (w);
+    } while (*w++ != '\0');
+>>>>>>> 3393086c3846d7aa28d1deb7acf8559fd9e28c64
  return (NULL);   
 }
