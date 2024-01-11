@@ -1,7 +1,5 @@
 #ifndef SHELL_H
 #define SHELL_H
-#ifndef YOUR_MACRO 
-#define YOUR_MACRO 0
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -18,6 +16,19 @@
 
 #define Delim
 extern char environ;
+
+/**
+ * struct strlist: the linked list
+ * @str: the string
+ * @num: field number
+ * @nxt: next node pointer
+ */
+typedef struct strlist
+{
+        char *str;
+        int num;
+        struct strlist *nxt;
+} list_t;
 
 /**
  * struct infopass: has false arguments
@@ -54,20 +65,6 @@ typedef struct builtin
         char *kind;
         int (*fun)(info_t *);
 } builtin_t;
-
-/**
- * struct strlist: the linked list
- * @str: the string
- * @num: field number
- * @nxt: next node pointer
- */
-typedef struct strlist
-{
-        char *str;
-        int num;
-        struct strlist *nxt;
-} list_t;
-
 
 void sigintHandler(__attribute__((unused))int sined_num);
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);

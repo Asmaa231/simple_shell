@@ -9,7 +9,7 @@ int main(int ac, char **argv)
 	const char *delim = " \n";
 	char *tok;
 	int toks_num = 0;
-	char toks;
+	char **toks;
 	int i;
 
 	while (1)
