@@ -1,5 +1,7 @@
 #ifndef SHELL_H
 #define SHELL_H
+#ifndef YOUR_MACRO 
+#define YOUR_MACRO default_value
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -70,6 +72,7 @@ typedef struct strlist
 void sigintHandler(__attribute__((unused))int sined_num);
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 int _getline(info_t *info, char **poter, size_t *lenth);
+char **string_token(char *command, int read_chars);
 void execmd(char **argv);
 
 
