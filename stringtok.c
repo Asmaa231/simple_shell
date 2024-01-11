@@ -16,11 +16,11 @@ char **string_token(char *command, int read_chars)
 	int i;
 
 	cp_cmd = malloc(sizeof(char) * read_chars + 1);
-	if (cp_cmd == Null)
+	if (cp_cmd == NULL)
 		perror("memo allocation err");
 
-	strcpy(cp_cmd, whole_cmd);
-	toks_num = strtok(cp_cmd, delim);
+	strcpy(cp_cmd, command);
+	tok = strtok(cp_cmd, delim);
 
 	while (tok)
 	{
@@ -28,11 +28,11 @@ char **string_token(char *command, int read_chars)
 		tok = strtok(0, delim);
 	}
 	toks_num++;
-	argv = malloc(sizeof(char *) * (toks_num + 1));
+	argv = malloc(sizeof(char) * (toks_num + 1));
 	tok = strtok(cp_cmd, delim);
 	for (i = 0; tok != NULL; i++)
 	{
-		argv[i] = malloc(sizeof(char) * (_strlen(tok) + 1));
+		argv[i] = malloc(sizeof(char) * (strlen(tok) + 1));
 		_strcpy(argv[i], tok);
 		tok = strtok(NULL, delim);
 	}
