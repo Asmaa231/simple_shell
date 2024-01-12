@@ -38,29 +38,33 @@ char *get_loc(char *cmd)
 		pathcp = _strdup(path);
 		cmd_len = _strlen(cmd);
 		path_tok = strtok(pathcp, ":");
-	}
-	while (path_tok)
-	{
-		dir_len = _strlen(path_tok);
-		path_file = malloc(cmd_len + dir_len + 2);
-		_strcpy(path_file, path_tok);
-		_strcat(path_file, "/");
-		_strcat(path_file, cmd);
-		_strcat(path_file, "\0");
-		if (stat(path_file, &buff) == 0)
-			free(pathcp);
-		return (path_file);
-	}
-	else
-	{
-		free(path_file);
-		path_tok = strtok(0, ":");
-	}
-	free(pathcp);
 
-	if (_stat(cmd, &buff) == 0)
-		return (cmd);
-	return (0);
+		while (path_tok)
+		{
+			dir_len = _strlen(path_tok);
+			path_file = malloc(cmd_len + dir_len + 2);
+			_strcpy(path_file, path_tok);
+			_strcat(path_file, "/");
+			_strcat(path_file, cmd);
+			_strcat(path_file, "\0");
+
+			if (stat(path_file, &buff) == 0)
+			{
+				free(pathcp);
+				return (path_file);
+			}
+			else
+			{
+				free(path_file);
+				path_tok = strtok(0, ":");
+			}
+		}
+		free(pathcp);
+
+		if (_stat(cmd, &buff) == 0)
+			return (cmd);
+		return (0);
+	}
 	return (0);
 }
 
