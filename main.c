@@ -21,11 +21,9 @@ int main(int ac, char **argv)
                         return (-1);
                 }
 		toks = string_token(whole_cmd, read_chars);
-	}
-	execmd(toks);
 
-	for(i = 0; toks != NULL; i++)
-        printf("%s\n", toks[i]);
+		execmd(toks);
+	}
 
 	free(whole_cmd);
 	return (0);
