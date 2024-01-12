@@ -25,9 +25,9 @@ void execmd(char **argv)
  * Return: cmd path
  */
 
-char get_loc(char *cmd)
+char *get_loc(char *cmd)
 {
-	char *path, *pathcp, path_tok, path_file;
+	char *path, *pathcp, *path_tok, path_file;
 	int cmd_len, dir_len;
 	struct stat buff;
 
