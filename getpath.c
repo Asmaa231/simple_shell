@@ -20,12 +20,12 @@ void execmd(char **argv)
 }
 
 /**
- * get_loc - find cmd path
+ * get_loc - function find cmd path
  * @cmd: input user cmd
  * Return: cmd path
  */
 
-char *get_loc(char *cmd)
+char get_loc(char *cmd)
 {
 	char *path, *pathcp, path_tok, path_file;
 	int cmd_len, dir_len;

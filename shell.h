@@ -74,19 +74,19 @@ void execmd(char **argv);
 
 
 char *get_loc(char *cmd);
-int *_stat(const char *pathnm, struct stat **statbuff);
+int _stat(const char *pathnm, struct stat **statbuff);
 
 
 char *getenv(const char *name);
-int *_setenv(const char *name, const char *value, int overwrite);
-int *_unsetenv(const char *name);
+int _setenv(const char *name, const char *value, int overwrite);
+int _unsetenv(const char *name);
 
 char *strtok(char *s, const char *delim);
 char *_strcpy(char *dest, char *src);
 char *_strcat(char *dest, char *src);
 char *_strdup(const char *s);
-int *_strcmp(char *s1, char *s2);
-int *_strlen(char *s);
+int _strcmp(char *s1, char *s2);
+int _strlen(char *s);
 
 int _putchar(char c);
 
