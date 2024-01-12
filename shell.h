@@ -79,7 +79,7 @@ int _stat(const char *pathnm, struct stat *statbuff);
 
 char *getenv(const char *name);
 int _setenv(const char *name, const char *value);
-int _unsetenv(const char *name);
+int _unsetenv(info_t *info, char *jo);
 
 char *strtok(char *s, const char *delim);
 char *_strcpy(char *dest, char *src);
