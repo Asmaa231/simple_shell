@@ -6,12 +6,13 @@
  * Return: Always 0 
 */
 int main(void){
-    char *argv[] = {"bin/ls", "/user/", NULL};
+    char *argv[] = {"bin/ls", "/user/", NULL}; //corrected path for ls
     printf("Before execv\n");
     if (execve(argv[0], argv, NULL) == -1)
     {
         perror("Error:");
     }
+    //code after execv will not executed
     printf("After execv\n");
     return (0);
 }
@@ -21,21 +22,23 @@ int main(void){
  * Return: exits with a given statement shows the status of the shell
 */
 int _myexit(info_t *intel){
-    int exitcheckers:
+    int exit_status:
     if (intel-> argv [1]) /* This is just to find out if there is an exit argument*/
     {
-        exitcheckers = erratoi(intel->argv[1]);
-        if (exitcheckers == -1)
+        exit_status = atoi(intel->argv[1]);
+        if (exit_status == 0)
         {
-            intel->status = 2; /* This is just to indicate the exit statemnet if there is an illegal statement*/
+            intel->status = -2; /* This is just to indicate the exit statemnet if there is an illegal statement*/
+           // Assuming print_error and _eputs are defined and handle error printing
+            //_eputs are defined and handle error printing
             print_error(intel, "Illegal Number:");
             _eputs(intel->argv[1]);
             _eputchar("\n");
-            return (1);
+            return (1);// Indicates an error condition
         }
-        intel->err num = erratoi(intel->argv[1]);
-        return (-2) /* Indicates that the shell should exit with a given exit statement*/
+        intel->errnum = exit_status; //setting an exit status
+        return exit_status; /* // Return the exit status*/
     }
-    intel->err num = -1 /* Unspecified error*/
-    return (-2);
+    intel->errnum = -1 /* Unspecified error*/
+    return (-1); // Indicates an error condition
 }
