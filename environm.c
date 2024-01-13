@@ -1,5 +1,4 @@
 #include "shell.h"
-
 /**
  * getenv - It's a Function used to fetch an evironment variable
  * @info: The structure holds expected arguments , maintain a Constant Func
