@@ -3,7 +3,7 @@
  *getenv - It's a Function used to fetch an evironment variable
  *@info: The structure holds expected arguments , maintain a Constant Func
  *@sin: The Environment variable name
- *Return: It is going to be the Variable Value 
+ *Return:It is going to be the Variable Value
  */
 char *getenv(info_t *info, const char *sin)
 {
