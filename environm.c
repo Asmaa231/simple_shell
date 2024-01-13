@@ -1,8 +1,8 @@
 #include "shell.h"
 /**
- * getenv - It's a Function used to fetch an evironment variable
- * @info: The structure holds expected arguments , maintain a Constant Func
- * @sin: The Environment variable name
+ *getenv - It's a Function used to fetch an evironment variable
+ *@info: The structure holds expected arguments , maintain a Constant Func
+ *@sin: The Environment variable name
  *Return: It is going to be the Variable Value 
  */
 char *getenv(info_t *info, const char *sin)
@@ -14,7 +14,7 @@ while (node)
 g = starts_with(node->str, sin);
 if (g && *g)
 return (g);
-node = node ->next;
+node = node->next;
 }
 return (NULL);
 }
@@ -34,18 +34,19 @@ if (!jo || !res)
 {
 return (0);
 }
-bur = malloc(_strlen(jo) + _strlen(res) +2);
+bur = malloc(_strlen(jo) + _strlen(res) + 2);
 if (!bur)
 return (1);
 _strcpy(bur, jo);
 _strcat(bur, "=");
 _strcat(bur, res);
 node = info->env;
-while (node){
+while (node)
+{
 t = starts_with(node->str, jo);
 if (t && *t == '=')
- {
-free(node->str); /*Free the existing string before assigning the new one
+{
+free(node->str);
 node->str = bur;
 info->env_changed = 1;
 return (0);
@@ -57,10 +58,11 @@ free(bur);
 info->env_changed = 1;
 return (0);
 }
+
 /**
  * _unsetenv- This Function is used to delete a Variable.
  *@info: The structure holds expected arguments, maintain a Constant Func
- *return: on success or -1 on error cases 
+ *return: on success or -1 on error cases
 */
 int _unsetenv(info_t *info, char *jo)
 {
@@ -82,10 +84,11 @@ n++;
 }
 return (info->env_changed);
 }
+
 /**
  * _mysetenv - This Function create or initialize a new Environemt Variable
  *@tango: The structure HOLDS expected arguments
- * Return: 0 indicates that the environment variable name was successfully set
+ *Return: 0 indicates that the environment variable name was successfully set
 */
 int _mysetenv(info_t *tango)
 {
