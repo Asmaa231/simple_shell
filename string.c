@@ -11,7 +11,7 @@ int _strlen(char *e)
 	int c = 0;
 
 	if (!e)
-		return (0); 
+	return (0); 
 	while (*e != '\0')
 		c++;
 		e++;
@@ -42,14 +42,14 @@ else
 /**
  * _starts with - checks if the Needle starts with a haystack
  * @haystack: A string to look or search
- * @needle: The Substring that needs to be found 
+ * @needle: The Substring that needs to be found
  *
  *Return: address of next char of haystack or Null
  */
 char *starts_with (const char *haystack, const char *needle)
 {
 while (*needle)
-if(*needle++ != *haystack++)
+if (*needle++ != *haystack++)
 return (NULL);
 return ((char *)haystack);
 }
