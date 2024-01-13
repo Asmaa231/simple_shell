@@ -11,7 +11,7 @@ int _strlen(char *e)
 	int c = 0;
 
 	if (!e)
-	return (0); 
+return (0); 
 	while (*e != '\0')
 		c++;
 		e++;
