@@ -31,14 +31,14 @@ if (exit_status == 0)
 {
 intel->status = -2; /*indicates the exit statemnet if it's illegal statement*/
 /*Assuming print_error and _eputs are defined and handle error printing
- _eputs are defined and handle error printing*/ 
+_eputs are defined and handle error printing*/
 print_error(intel, "Illegal Number:");
 _eputs(intel->argv[1]);
 _eputchar("\n");
 return (1);/*Indicates an error condition*/
 }
-intel->errnum = exit_status; //setting an exit status
-return exit_status; /* Return the exit status*/
+intel->errnum = exit_status;
+return (exit_status); /* Return the exit status*/
 }
 intel->errnum = -1 /* Unspecified error*/
 return (-1); /*Indicates an error condition*/
