@@ -76,7 +76,7 @@ void execmd(char **argv);
 char *get_loc(char *cmd);
 int _stat(const char *pathnm, struct stat *statbuff);
 
-
+int _myexit(info_t *intel);
 char *getenv(const char *name);
 int _setenv(const char *name, const char *value);
 int _unsetenv(info_t *info, char *jo);
