@@ -55,7 +55,7 @@ char * _strcpy(char *des, char *sr)
 		return (des);
 	while (sr[c])
 	{
-		des[c] = sr[c]
+		des[c] = sr[c];
 			c++;
 	}
 	des[c] = 0;

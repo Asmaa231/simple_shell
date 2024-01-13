@@ -12,7 +12,11 @@ int *_strncpy(char *des,char *sr,int k)
 int e, c;
 char *r =des;
 e = 0;
+<<<<<<< HEAD
+while (sr[e] != '\0' && e < k - 1)
+=======
 while (sr[e] != '\0' && e < k)
+>>>>>>> 3393086c3846d7aa28d1deb7acf8559fd9e28c64
 {
     des[e] =sr[e];
     e++;
@@ -48,7 +52,11 @@ char *_strncat(char *st1, char *inr, int k)
     {
         p++;
     }
+<<<<<<< HEAD
+    while (inr[r] != '\0' && r > k)
+=======
     while (inr[r] != '\0' && r < k)
+>>>>>>> 3393086c3846d7aa28d1deb7acf8559fd9e28c64
     {
         st1[p] = inr[r];
         p++;
@@ -70,8 +78,14 @@ return (h);
 char *_strchr(char *w, char g)
 {
     do{
+<<<<<<< HEAD
+        if (*r == g)
+        return (r);
+    } while (*r++ != '\0');
+=======
         if (*w == g)
         return (w);
     } while (*w++ != '\0');
+>>>>>>> 3393086c3846d7aa28d1deb7acf8559fd9e28c64
  return (NULL);   
 }
