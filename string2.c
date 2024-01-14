@@ -67,7 +67,6 @@ return (h);
 */
 char *_strchr(char *w, char g)
 {
-    int r;
 do {
 if (*r == g)
 return (r);
