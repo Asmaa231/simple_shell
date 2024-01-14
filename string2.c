@@ -1,23 +1,23 @@
 #include "shell.h"
 /**
 *_strncpy- copy a specified Number of strings
-*@des: The destination string stores the one will be copied 
+*@des: The destination string stores the one will be copied
 *@sr: The Main or source string
 *k:The Number of characters which will be copied
 *
 *Return: The string after the process(concatenated).
 */
-int *_strncpy (char *des,char *sr,int k)
- {
+int *_strncpy(char *des, char *sr, int k)
+{
 int e, c;
-char *r =des;
+char *r = des;
 e = 0;
 while (sr[e] != '\0' && e < k - 1)
 {
 des[e] = sr[e];
 e++;
 }
-if (e < k) 
+if (e < k)
 {
 c = e;
 while (c < k)
@@ -36,7 +36,7 @@ return (r);
 *@k: The maximum bytes that can be used
 *Return: The concatenated string
 */
-char *_strncat (char *st1, char *inr, int k)
+char *_strncat(char *st1, char *inr, int k)
 {
 int p, r;
 char *h = st1;
@@ -46,11 +46,7 @@ while (st1[p] != '\0')
 {
 p++;
 }
-<<<<<<< HEAD
     while (inr[r] != '\0' && r > k)
-=======
-    while (inr[r] != '\0' && r < k)
->>>>>>> 3393086c3846d7aa28d1deb7acf8559fd9e28c64
 {
 st1[p] = inr[r];
 p++;
@@ -72,14 +68,11 @@ return (h);
 char *_strchr(char *w, char g)
 {
 do{
-<<<<<<< HEAD
-        if (*r == g)
-        return (r);
-    } while (*r++ != '\0');
-=======
-        if (*w == g)
-        return (w);
-     while (*w++ != '\0');
->>>>>>> 3393086c3846d7aa28d1deb7acf8559fd9e28c64
+if (*r == g)
+return (r);
+} while (*r++ != '\0');
+if (*w == g)
+return (w);
+while (*w++ != '\0');
  return (NULL);   
 }
