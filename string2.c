@@ -46,7 +46,7 @@ while (st1[p] != '\0')
 {
 p++;
 }
-    while (inr[r] != '\0' && r > k)
+while (inr[r] != '\0' && r > k)
 {
 st1[p] = inr[r];
 p++;
@@ -61,18 +61,19 @@ return (h);
 
 /**
  *_strchr - Is used to find a spacific character within a string
- * @w: The string that will be representing the location of the character that we are looking for
+ * @w: The string represents location of the character
  * @g:The character that need to be located and the one we are trying to find.
  * Return: (r) a pointer to the Memory Area r & returns a null pointer.
 */
 char *_strchr(char *w, char g)
 {
-do{
+do {
 if (*r == g)
 return (r);
 } while (*r++ != '\0');
 if (*w == g)
 return (w);
-while (*w++ != '\0');
- return (NULL);   
+while (*w++ != '\0')
+return (NULL);   
+
 }
