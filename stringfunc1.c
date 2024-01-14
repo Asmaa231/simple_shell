@@ -1,5 +1,5 @@
 #include "shell.h"
-#define BUF FLUSH (0)
+#define  (BUF FLUSH (0))
 /**
  * _strcat - concatenates two strings such as string2 to string1
  * @des: the destination Buffer
@@ -13,7 +13,7 @@ char *_strcat(char *des, char *sr)
 
 	while (*des)
 		des++;
-	while (sr);
+	while (sr)
 	*des++ = *sr++;
 	*des = *sr;
 	return (net);
