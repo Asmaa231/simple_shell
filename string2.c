@@ -74,6 +74,6 @@ return (r);
 if (*w == g)
 return (w);
 while (*w++ != '\0')
-return (NULL);   
+return (NULL);
 
 }
