@@ -1,5 +1,5 @@
 #include "shell.h"
-#define BUF FLUSH 0
+#define BUF FLUSH (0)
 /**
  * _strcat - concatenates two strings such as string2 to string1
  * @des: the destination Buffer
@@ -7,34 +7,34 @@
  *
  * Return: Pointer to destination Buffer
  */
-char *_strcat(char *des,char *sr)
+char *_strcat(char *des, char *sr)
 {
-	char *net =des;
+	char *net = des;
 
-	while(*des)
+	while (*des)
 		des++;
-	while(sr);
-	*des++ =*sr++;
+	while (sr);
+	*des++ = *sr++;
 	*des = *sr;
 	return (net);
 }
 
 /**
  *_strdup _ create a duplicate of the string pointed to
- * @str: the string to duplicate 
+ * @str: the string to duplicate
  *
- * Return: Pointer to the Duplicate string 
+ * Return: Pointer to the Duplicate string
  */
 char *_strdup(const char *str)
 {
-	int dup =0;
+	int dup = 0;
 	char *net;
 
-	if (str ==NULL)
+	if (str == NULL)
 		return (NULL);
 	while (*str++)
 		dup++;
-	net = malloc (sizeof(char) *(dup + 1));
+	net = malloc (sizeof(char) * (dup + 1));
 	if (!net)
 		return (NULL);
 	for (dup++; dup--;)
@@ -42,16 +42,17 @@ char *_strdup(const char *str)
 	return (net);
 }
 /**
- * _strcpy - this function copies a string from one location to another 
- * @des: The Destination 
- * @sr: The Source 
+ * _strcpy - this function copies a string from one location to another
+ * @des: The Destination
+ * @sr: The Source
  *
- * Return: Pointer to Destination 
+ * Return: Pointer to Destination
  */
-char * _strcpy(char *des, char *sr)
+char *_strcpy(char *des, char *sr)
 {
 	int c = 0;
 	if (des == sr || sr == 0)
+
 		return (des);
 	while (sr[c])
 	{
@@ -64,7 +65,7 @@ char * _strcpy(char *des, char *sr)
 
 /**
  * _putchar - This helps in writing down the character c in stdout
- * @e: The character which will be printed 
+ * @e: The character which will be printed
  *
  * Return: On Success 1.
  * Display error when -1 is returned, and errno is set appropriately.
@@ -73,7 +74,8 @@ int _putchar(char e)
 {
 	static int c;
 	static char buf[WRITE_BUF_SIZE];
-	if (e ==_BUF FLUSH || c >= WRITE_BUF_SIZE)
+	if (e == _BUF FLUSH || c >= WRITE_BUF_SIZE)
+
 	{
 		write(1, buf, c);
 		c = 0;
