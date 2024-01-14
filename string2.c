@@ -67,13 +67,13 @@ return (h);
 */
 char *_strchr(char *w, char g)
 {
+char *r = w;
 do {
 if (*r == g)
 return (r);
-} while (*r++ != '\0');
-if (*w == g)
-return (w);
-while (*w++ != '\0')
+} while (*r == g);
+return (r);
+while (*r++ != '\0')
 return (NULL);
 
 }
