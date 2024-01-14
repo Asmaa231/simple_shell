@@ -46,10 +46,11 @@ else
  *
  *Return: address of next char of haystack or Null
  */
-char *starts_with (const char *haystack, const char *needle)
+char *starts_with(const char *haystack, const char *needle)
 {
 while (*needle)
 if (*needle++ != *haystack++)
 return (NULL);
 return ((char *)haystack);
 }
+
