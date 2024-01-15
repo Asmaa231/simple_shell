@@ -5,7 +5,7 @@
 *@sr: The Main or source string
 *k:The Number of characters which will be copied
 *
-*Return: The string after the process(concatenated).
+*Return: The char after the process(concatenated).
 */
 int *_strncpy(char *des, char *sr, int k)
 {
@@ -19,7 +19,6 @@ e++;
 }
 if (e < k)
 {
-c = e;
 des[e] = '\0';
 }
 return r;
