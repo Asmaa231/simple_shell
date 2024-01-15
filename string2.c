@@ -20,15 +20,10 @@ e++;
 if (e < k)
 {
 c = e;
-while (c < k)
-{
-des[c] = '\0';
-c++;
+des[e] = '\0';
 }
+return r;
 }
-return (r);
-}
-
 /**
 *_strncat - concatenating a portion of one string to the end of another string.
 *@st1:The First string
