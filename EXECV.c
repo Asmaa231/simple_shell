@@ -23,23 +23,21 @@ return (0);
 */
 int _myexit(info_t *intel)
 {
-int exit_status:
-if (intel->argv[1]) /* This is to find out if there is an exit argument*/
+int exit_status;
+if (intel->argv[1])
 {
-exit_status = atoi(intel->argv[1]);
-if (exit_status == 0)
+ exit_status = atoi(intel->argv[1]);
+if (exit_status == 0) 
 {
-intel->status = -2; /*indicates the exit statemnet if it's illegal statement*/
-/*Assuming print_error and _eputs are defined and handle error printing
-_eputs are defined and handle error printing*/
+intel->status = -2;
 print_error(intel, "Illegal Number:");
 _eputs(intel->argv[1]);
 _eputchar("\n");
-return (1);/*Indicates an error condition*/
+return 1;
 }
 intel->errnum = exit_status;
-return (exit_status); /* Return the exit status*/
+return exit_status;
 }
-intel->errnum = -1 /* Unspecified error*/
-return (-1); /*Indicates an error condition*/
+intel->errnum = -1;
+return -1;
 }
