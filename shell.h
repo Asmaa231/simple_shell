@@ -12,7 +12,7 @@
 #include <math.h>
 #include <ctype.h>
 #include <stdbool.h>
-
+#include <stddef.h>
 
 #define Delim
 extern char environ;
@@ -69,11 +69,14 @@ typedef struct builtin
 void sigintHandler(__attribute__((unused))int sined_num);
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 int _getline(info_t *info, char **poter, size_t *lenth);
+
+
+char *_starts_with(const char *haystack, const char *needle);
 char **string_token(char *command, int read_chars);
 void execmd(char **argv);
 
 
-char *get_loc(char *cmd);
+char **get_loc(char *cmd);
 int _stat(const char *pathnm, struct stat *statbuff);
 
 int _myexit(info_t *intel);

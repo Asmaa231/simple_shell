@@ -25,7 +25,7 @@ void execmd(char **argv)
  * Return: cmd path
  */
 
-char *get_loc(char *cmd)
+char **get_loc(char *cmd)
 {
 	char *path, *pathcp, *path_tok, *path_file;
 	int cmd_len, dir_len;
@@ -51,7 +51,7 @@ char *get_loc(char *cmd)
 			if (stat(path_file, &buff) == 0)
 			{
 				free(pathcp);
-				return (path_file);
+				return (*path_file);
 			}
 			else
 			{
@@ -62,7 +62,7 @@ char *get_loc(char *cmd)
 		free(pathcp);
 
 		if (_stat(cmd, &buff) == 0)
-			return (cmd);
+			return (*cmd);
 		return (0);
 	}
 	return (0);

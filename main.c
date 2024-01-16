@@ -13,8 +13,7 @@ int main(int ac, char **argv)
 	size_t n = 0;
 	char *whole_cmd = NULL;
 	ssize_t read_chars;
-	char **toks;
-
+	char **toks, *command;
 	(void)argv;
 	(void)ac;
 
@@ -27,6 +26,11 @@ int main(int ac, char **argv)
 			return (-1);
 		}
 		toks = string_token(whole_cmd, read_chars);
+		if (_starts_with(toks[0], "\\"))
+		{
+			command = get_loc(toks[0]);
+			execmd(**command);
+		}
 		execmd(toks);
 	}
 	free(whole_cmd);
