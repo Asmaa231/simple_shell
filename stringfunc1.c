@@ -1,5 +1,5 @@
 #include "shell.h"
-#define (BUF FLUSH(0))
+#define BUF FLUSH(0)
 /**
  * _strcat - concatenates two strings such as string2 to string1
  * @des: the destination Buffer
@@ -73,12 +73,12 @@ int _putchar(char e)
 {
 	static int c;
 	static char buf[WRITE_BUF_SIZE];
-	if (e == _BUF FLUSH || c >= WRITE_BUF_SIZE)
+	if (e == FLUSH || c >= WRITE_BUF_SIZE)
 	{
 		write(1, buf, c);
 		c = 0;
 	}
-	if (e != BUF_FLUSH)
+	if (e != _FLUSH)
 		buf[c++] = e;
 	return (c);
 }

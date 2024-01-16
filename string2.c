@@ -5,7 +5,7 @@
 *@sr: The Main or source string
 *k:The Number of characters which will be copied
 *
-*Return: The string after the process(concatenated).
+*Return: The char after the process(concatenated).
 */
 int *_strncpy(char *des, char *sr, int k)
 {
@@ -19,16 +19,10 @@ e++;
 }
 if (e < k)
 {
-c = e;
-while (c < k)
-{
-des[c] = '\0';
-c++;
+des[e] = '\0';
 }
+return r;
 }
-return (r);
-}
-
 /**
 *_strncat - concatenating a portion of one string to the end of another string.
 *@st1:The First string
@@ -67,13 +61,13 @@ return (h);
 */
 char *_strchr(char *w, char g)
 {
+char *r = w;
 do {
 if (*r == g)
 return (r);
-} while (*r++ != '\0');
-if (*w == g)
-return (w);
-while (*w++ != '\0')
+} while (*r == g);
+return (r);
+while (*r++ != '\0')
 return (NULL);
 
 }
